@@ -20,17 +20,7 @@ def generar():
         img.save('static/img/qr.png')
         return redirect(url_for('index'))
 
-#borrar imagen en carpeta static/img/qr al inciar el servidor
-@app.before_first_request
-def borrar():
-    try:
-        os.remove('static/img/qr.png')
-    except:
-        pass
-
-
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True)       
 
 
-    
