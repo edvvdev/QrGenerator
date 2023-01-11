@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Generar QR</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1>Generar QR</h1>
+                <form action="{{ url_for('generar') }}" method="POST">
+                    <div class="form-group">
+                        <input type="text" name="codigo" class="form-control" placeholder="Ingrese el codigo">
+                    </div>
+                    <div class="form-group text-center">
+                        <input type="submit" value="Generar" class="btn btn-primary">
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <h1>Mostrar QR</h1>
+                <img src="{{ url_for('static', filename='img/qr.png') }}" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
